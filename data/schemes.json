@@ -1,0 +1,503 @@
+[
+  {
+    "scheme_id": "TN_KMUT",
+    "scheme_name_ta": "கலைஞர் மகளிர் உரிமைத் திட்டம்",
+    "scheme_name_en": "Kalaignar Magalir Urimai Thittam",
+    "monthly_stipend": 1000,
+    "eligibility_rules": {
+      "gender": "female",
+      "is_head_of_family": true,
+      "min_age": 21,
+      "max_annual_income": 250000,
+      "max_wet_land_acres": 2.5,
+      "max_dry_land_acres": 5.0,
+      "max_electricity_units_yearly": 3600
+    },
+    "description_ta": "குடும்பத் தலைவிகளுக்கு மாதம் ₹1,000 உரிமைத் தொகை வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Smart Ration Card",
+      "Aadhaar Card",
+      "Bank Passbook",
+      "Electricity Bill"
+    ]
+  },
+  {
+    "scheme_id": "TN_MUTHULAKSHMI_MATERNITY",
+    "scheme_name_ta": "டாக்டர் முத்துலட்சுமி ரெட்டி மகப்பேறு நிதியுதவித் திட்டம்",
+    "scheme_name_en": "Dr. Muthulakshmi Reddy Maternity Benefit Scheme",
+    "monthly_stipend": 1000,
+    "eligibility_rules": {
+      "gender": "female",
+      "is_pregnant": true,
+      "min_age": 19,
+      "max_annual_income": 120000,
+      "max_deliveries": 2
+    },
+    "description_ta": "கர்ப்பிணி பெண்களுக்கு மகப்பேறு காலத்தில் ₹18,000 நிதியுதவி மற்றும் ஊட்டச்சத்து பெட்டகம் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "PICME Registration Number",
+      "Aadhaar Card",
+      "Bank Passbook",
+      "Income Certificate"
+    ]
+  },
+  {
+    "scheme_id": "TN_GIRL_CHILD_PROTECTION",
+    "scheme_name_ta": "முதலமைச்சரின் பெண் குழந்தை பாதுகாப்புத் திட்டம்",
+    "scheme_name_en": "Chief Minister's Girl Child Protection Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "gender": "female",
+      "max_children_in_family": 2,
+      "max_annual_income": 72000,
+      "parent_sterilization_required": true
+    },
+    "description_ta": "ஒன்று அல்லது இரண்டு பெண் குழந்தைகள் உள்ள ஏழைக் குடும்பங்களுக்கு நிலையான வைப்புத் தொகை நிதி உதவி.",
+    "required_documents": [
+      "Income Certificate",
+      "Birth Certificate of Girl Child",
+      "Sterilization Certificate",
+      "Aadhaar Card"
+    ]
+  },
+  {
+    "scheme_id": "TN_VIDIYAL_PAYANAM",
+    "scheme_name_ta": "மகளிர் விடியல் பயணத் திட்டம்",
+    "scheme_name_en": "Vidiyal Payanam Free Bus Travel Scheme for Women",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "gender": "female",
+      "applies_to_town_buses": true
+    },
+    "description_ta": "அரசு சாதாரண நகரப் பேருந்துகளில் பெண்கள் மற்றும் திருநங்கைகள் இலவசமாகப் பயணம் செய்யும் திட்டம்.",
+    "required_documents": [
+      "Not Required (Direct Travel)"
+    ]
+  },
+  {
+    "scheme_id": "TN_DESTITUTE_WIDOW_PENSION",
+    "scheme_name_ta": "ஆதரவற்ற விதவை ஓய்வூதியத் திட்டம்",
+    "scheme_name_en": "Destitute Widow Pension Scheme",
+    "monthly_stipend": 1200,
+    "eligibility_rules": {
+      "gender": "female",
+      "is_widow": true,
+      "min_age": 18,
+      "max_annual_income": 120000
+    },
+    "description_ta": "ஆதரவற்ற விதவை பெண்களுக்கு மாதம் ₹1,200 நிதியுதவி வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Death Certificate of Husband",
+      "Destitute Widow Certificate",
+      "Aadhaar Card",
+      "Smart Ration Card"
+    ]
+  },
+  {
+    "scheme_id": "TN_DESTITUTE_DESERTED_WIVES",
+    "scheme_name_ta": "கணவரால் கைவிடப்பட்ட பெண்கள் ஓய்வூதியத் திட்டம்",
+    "scheme_name_en": "Destitute Deserted Wives Pension Scheme",
+    "monthly_stipend": 1200,
+    "eligibility_rules": {
+      "gender": "female",
+      "min_age": 30,
+      "max_annual_income": 120000,
+      "is_deserted_by_husband": true
+    },
+    "description_ta": "கணவரால் கைவிடப்பட்டு 5 ஆண்டுகளுக்கு மேல் வாழும் ஆதரவற்ற பெண்களுக்கு மாதம் ₹1,200 ஓய்வூதியம்.",
+    "required_documents": [
+      "Deserted Certificate from Tahsildar",
+      "Aadhaar Card",
+      "Smart Ration Card",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "TN_PUDHUMAI_PENN",
+    "scheme_name_ta": "புதுமைப் பெண் திட்டம்",
+    "scheme_name_en": "Pudhumai Penn Scheme",
+    "monthly_stipend": 1000,
+    "eligibility_rules": {
+      "gender": "female",
+      "min_age": 17,
+      "max_age": 25,
+      "is_govt_school_studied": true,
+      "pursuing_higher_education": true
+    },
+    "description_ta": "அரசுப் பள்ளியில் படித்த மாணவிகள் உயர்கல்வி பயில மாதம் ₹1,000 உதவித்தொகை.",
+    "required_documents": [
+      "Smart Ration Card",
+      "School Transfer Certificate",
+      "Aadhaar Card",
+      "College Bonafide Certificate"
+    ]
+  },
+  {
+    "scheme_id": "TN_TAMIL_PUDHALVAN",
+    "scheme_name_ta": "தமிழ்ப் புதல்வன் திட்டம்",
+    "scheme_name_en": "Tamil Pudhalvan Scheme",
+    "monthly_stipend": 1000,
+    "eligibility_rules": {
+      "gender": "male",
+      "min_age": 17,
+      "max_age": 25,
+      "is_govt_school_studied": true,
+      "pursuing_higher_education": true
+    },
+    "description_ta": "அரசுப் பள்ளியில் படித்த மாணவர்கள் உயர்கல்வி பயில மாதம் ₹1,000 உதவித்தொகை.",
+    "required_documents": [
+      "Smart Ration Card",
+      "School TC",
+      "Aadhaar Card",
+      "College Bonafide Certificate"
+    ]
+  },
+  {
+    "scheme_id": "TN_NAAN_MUDHALVAN",
+    "scheme_name_ta": "நான் முதல்வன் திறன் மேம்பாட்டுத் திட்டம்",
+    "scheme_name_en": "Naan Mudhalvan Skill Development Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "min_age": 17,
+      "max_age": 30,
+      "is_student_or_job_seeker": true
+    },
+    "description_ta": "கல்லூரி மாணவர்கள் மற்றும் இளைஞர்களுக்கான இலவச தொழில்முறை திறன் மேம்பாட்டுப் பயிற்சி.",
+    "required_documents": [
+      "Aadhaar Card",
+      "College Student ID / Educational Certificate"
+    ]
+  },
+  {
+    "scheme_id": "TN_FREE_LAPTOP",
+    "scheme_name_ta": "மாணவர்களுக்கான இலவச மடிக்கணினி திட்டம்",
+    "scheme_name_en": "Free Laptop Scheme for Students",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_govt_school_studied": true,
+      "min_age": 16,
+      "max_age": 22
+    },
+    "description_ta": "அரசு மற்றும் அரசு உதவிபெறும் பள்ளி, கல்லூரி மாணவர்களுக்கு இலவச லேப்டாப் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Student ID Card",
+      "School Bonafide Certificate",
+      "Aadhaar Card"
+    ]
+  },
+  {
+    "scheme_id": "TN_POST_MATRIC_SCHOLARSHIP",
+    "scheme_name_ta": "போஸ்ட்-மெட்ரிக் கல்வி உதவித்தொகை திட்டம்",
+    "scheme_name_en": "Post-Matric Scholarship Scheme",
+    "monthly_stipend": 500,
+    "eligibility_rules": {
+      "pursuing_higher_education": true,
+      "max_annual_income": 250000
+    },
+    "description_ta": "பிற்படுத்தப்பட்ட, மிகவும் பிற்படுத்தப்பட்ட மற்றும் ஆதிதிராவிட மாணவர்களுக்கான கல்விக் கட்டண உதவித்தொகை.",
+    "required_documents": [
+      "Community Certificate",
+      "Income Certificate",
+      "Aadhaar Card",
+      "College Fee Receipt"
+    ]
+  },
+  {
+    "scheme_id": "GOI_PM_KISAN",
+    "scheme_name_ta": "பிரதம மந்திரி கிசான் சம்மான் நிதி திட்டம் (PM-KISAN)",
+    "scheme_name_en": "PM-KISAN Samman Nidhi",
+    "monthly_stipend": 500,
+    "eligibility_rules": {
+      "is_landholding_farmer": true,
+      "requires_ekyc": true
+    },
+    "description_ta": "நிலமுள்ள விவசாயக் குடும்பங்களுக்கு ஆண்டுக்கு ₹6,000 (மூன்று தவணைகளில்) நேரடி நிதி உதவி வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Bank Passbook",
+      "e-KYC Verification"
+    ]
+  },
+  {
+    "scheme_id": "TN_UZHAVAR_SSS",
+    "scheme_name_ta": "உழவர் பாதுகாப்பு திட்டம்",
+    "scheme_name_en": "Uzhavar Social Security Scheme",
+    "monthly_stipend": 1000,
+    "eligibility_rules": {
+      "min_age": 18,
+      "max_age": 65,
+      "is_agricultural_laborer": true
+    },
+    "description_ta": "விவசாயிகள் மற்றும் விவசாயத் தொழிலாளர்களுக்கான சமூகப் பாதுகாப்பு உதவித் தொகை.",
+    "required_documents": [
+      "Uzhavar Card",
+      "Patta/Chitta Document",
+      "Aadhaar Card"
+    ]
+  },
+  {
+    "scheme_id": "GOI_PM_KMY",
+    "scheme_name_ta": "பிரதம மந்திரி கிசான் மான்தன் யோஜனா (விவசாயி ஓய்வூதியம்)",
+    "scheme_name_en": "PM Kisan Maandhan Yojana (Farmer Pension Scheme)",
+    "monthly_stipend": 3000,
+    "eligibility_rules": {
+      "min_age": 18,
+      "max_age": 40,
+      "is_small_marginal_farmer": true,
+      "max_land_acres": 5.0
+    },
+    "description_ta": "சிறு மற்றும் குறு விவசாயிகளுக்கு 60 வயதுக்குப் பிறகு மாதம் ₹3,000 ஓய்வூதியம் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Savings Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "GOI_PMFBY",
+    "scheme_name_ta": "பிரதம மந்திரி பயிர் காப்பீட்டுத் திட்டம் (PMFBY)",
+    "scheme_name_en": "Pradhan Mantri Fasal Bima Yojana",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_farmer": true,
+      "applies_to_notified_crops": true
+    },
+    "description_ta": "இயற்கை சீற்றங்கள் மற்றும் பூச்சித் தாக்குதலால் பயிர் சேதமடையும் போது இழப்பீடு வழங்கும் பயிர் காப்பீட்டு திட்டம்.",
+    "required_documents": [
+      "Land Patta/Chitta",
+      "Aadhaar Card",
+      "Sowing Certificate",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "GOI_KCC",
+    "scheme_name_ta": "கிசான் கடன் அட்டை திட்டம் (KCC)",
+    "scheme_name_en": "Kisan Credit Card Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_farmer_or_animal_husbandry": true,
+      "interest_subvention_applicable": true
+    },
+    "description_ta": "விவசாயிகளுக்கு குறைந்த வட்டியில் பயிர்க்கடன் மற்றும் நடைமுறை மூலதனக் கடன் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Passport Size Photo",
+      "Voter ID"
+    ]
+  },
+  {
+    "scheme_id": "GOI_SMAM",
+    "scheme_name_ta": "வேளாண் இயந்திரமயமாக்கல் துணைத் திட்டம் (SMAM)",
+    "scheme_name_en": "Sub-Mission on Agricultural Mechanization",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_farmer": true,
+      "subsidy_percentage": 40
+    },
+    "description_ta": "டிராக்டர், பவர் டில்லர் மற்றும் விவசாயக் கருவிகள் வாங்க 40% முதல் 50% வரை மானியம் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Chitta/Adangal",
+      "Community Certificate",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "GOI_PMKSY_PDMC",
+    "scheme_name_ta": "சொட்டுநீர் மற்றும் தெளிப்புநீர் பாசன மானியத் திட்டம் (PMKSY-PDMC)",
+    "scheme_name_en": "Pradhan Mantri Krishi Sinchayee Yojana - Per Drop More Crop",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_landholding_farmer": true,
+      "drip_subsidy_small_marginal": 100,
+      "drip_subsidy_other": 75
+    },
+    "description_ta": "சிறு/குறு விவசாயிகளுக்கு 100% மற்றும் இதர விவசாயிகளுக்கு 75% மானியத்தில் சொட்டுநீர் பாசனம் அமைக்கும் திட்டம்.",
+    "required_documents": [
+      "Land Patta/Chitta",
+      "Adangal Certificate",
+      "Aadhaar Card",
+      "Field Map (FMB)"
+    ]
+  },
+  {
+    "scheme_id": "TN_KURUVAI_SPECIAL",
+    "scheme_name_ta": "குருவை சிறப்புத் தொகுப்புத் திட்டம் 2026",
+    "scheme_name_en": "Kuruvai Special Package Scheme 2026",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_paddy_farmer": true,
+      "is_delta_or_non_delta_notified": true
+    },
+    "description_ta": "குருவை சாகுபடி செய்யும் டெல்டா மற்றும் இதர மாவட்ட விவசாயிகளுக்கு ரசாயன உரங்கள் மற்றும் விதைகள் மானியத்தில் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Smart Ration Card",
+      "Aadhaar Card",
+      "Land Chitta/Adangal"
+    ]
+  },
+  {
+    "scheme_id": "TN_MILLET_MISSION",
+    "scheme_name_ta": "தமிழ்நாடு சிறுதானிய இயக்கம்",
+    "scheme_name_en": "Tamil Nadu Millet Mission",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_millet_farmer": true
+    },
+    "description_ta": "கேழ்வரகு, கம்பு, சோளம் போன்ற சிறுதானிய சாகுபடியை ஊக்குவிக்க விதைகள் மற்றும் உள்ளீடுகள் மானியத்தில் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "TN_PULSES_MISSION",
+    "scheme_name_ta": "பயறுவகை பயிர்கள் தற்சார்பு இயக்கம்",
+    "scheme_name_en": "Drive for Self-Sufficiency in Pulses",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_pulse_farmer_or_processor": true,
+      "max_processing_unit_subsidy": 2500000
+    },
+    "description_ta": "உளுந்து, பாசிப்பயறு விதைகள் மானியம் மற்றும் பயறு பதப்படுத்தும் மையங்கள் அமைக்க ₹25 லட்சம் வரை மானியம் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Chitta/Adangal",
+      "Bank Passbook",
+      "FPO / Business Registration"
+    ]
+  },
+  {
+    "scheme_id": "TN_SHDS",
+    "scheme_name_ta": "மாநில தோட்டக்கலை வளர்ச்சித் திட்டம் (SHDS)",
+    "scheme_name_en": "State Horticulture Development Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_horticulture_farmer": true
+    },
+    "description_ta": "பழங்கள், காய்கறிகள், பூக்கள் மற்றும் நிழல்வலைக் குடில்கள் அமைக்க மானியம் வழங்கும் தோட்டக்கலைத் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Adangal Certificate",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "TN_CM_MKMKS",
+    "scheme_name_ta": "முதலமைச்சரின் மண்ணுயிர் காத்து மண்ணுயிர் காப்போம் திட்டம்",
+    "scheme_name_en": "Chief Minister's Mannuyir Kaathu Mannuyir Kaappom Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_organic_or_natural_farmer": true
+    },
+    "description_ta": "மண் வளத்தைப் பாதுகாக்கவும் இயற்கை விவசாயம் மற்றும் பசுந்தாள் உரங்களை ஊக்குவிக்கவும் மானியம் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Soil Test Health Card"
+    ]
+  },
+  {
+    "scheme_id": "TN_AGROFORESTRY",
+    "scheme_name_ta": "தமிழ்நாடு வேளாண் காடுகள் கொள்கை மற்றும் பசுமைப் போர்வை இயக்கம்",
+    "scheme_name_en": "Tamil Nadu Agroforestry & Sustainable Green Cover Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "is_landholding_farmer": true,
+      "plants_tree_crops": true
+    },
+    "description_ta": "விவசாய நிலங்களில் தேக்கு, ஈட்டி, மலைவேம்பு போன்ற மரக்கன்றுகளை இலவசமாக/மானியத்தில் நட்டு வளர்க்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Land Patta/Chitta",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "TN_CMCHIS",
+    "scheme_name_ta": "முதலமைச்சரின் விரிவான மருத்துவக் காப்பீட்டுத் திட்டம்",
+    "scheme_name_en": "Chief Minister's Comprehensive Health Insurance Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "max_annual_income": 120000,
+      "allowed_ration_card_types": [
+        "PHH",
+        "NPHH"
+      ]
+    },
+    "description_ta": "ஆண்டுக்கு ₹5 லட்சம் வரையிலான கட்டணமில்லா மருத்துவ மற்றும் அறுவை சிகிச்சை காப்பீடு.",
+    "required_documents": [
+      "Income Certificate",
+      "Smart Ration Card",
+      "Aadhaar Card"
+    ]
+  },
+  {
+    "scheme_id": "TN_MAKKALAI_THEDI_MARUTHUVAM",
+    "scheme_name_ta": "மக்களைத் தேடி மருத்துவம் திட்டம்",
+    "scheme_name_en": "Makkalai Thedi Maruthuvam Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "requires_home_healthcare": true
+    },
+    "description_ta": "நீரிழிவு, ரத்த அழுத்தம் உள்ளிட்ட தொற்றா நோய்களுக்கான மருந்துகளை வீடு தேடி வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Smart Ration Card",
+      "Aadhaar Card",
+      "Medical Prescription"
+    ]
+  },
+  {
+    "scheme_id": "TN_INNUYIR_KAAPPOM",
+    "scheme_name_ta": "இன்னுயிர் காப்போம் - நம்மை காக்கும் 48 திட்டம்",
+    "scheme_name_en": "Innuyir Kaappom - Nammai Kaakkum 48 Scheme",
+    "monthly_stipend": 0,
+    "eligibility_rules": {
+      "emergency_road_accident_care": true
+    },
+    "description_ta": "சாலை விபத்தில் சிக்குவோருக்கு முதல் 48 மணி நேரத்திற்கு ₹1 லட்சம் வரையிலான இலவச அவசர சிகிச்சை.",
+    "required_documents": [
+      "Direct Emergency Service (No Prior Documents Required)"
+    ]
+  },
+  {
+    "scheme_id": "TN_OLD_AGE_PENSION",
+    "scheme_name_ta": "முதியோர் ஓய்வூதியத் திட்டம் (OAP)",
+    "scheme_name_en": "Tamil Nadu Old Age Pension Scheme",
+    "monthly_stipend": 1200,
+    "eligibility_rules": {
+      "min_age": 60,
+      "is_destitute": true,
+      "max_annual_income": 120000
+    },
+    "description_ta": "ஆதரவற்ற 60 வயதுக்கு மேற்பட்ட முதியவர்களுக்கு மாதம் ₹1,200 ஓய்வூதியம் வழங்கும் திட்டம்.",
+    "required_documents": [
+      "Aadhaar Card",
+      "Smart Ration Card",
+      "Age Proof Certificate",
+      "Bank Passbook"
+    ]
+  },
+  {
+    "scheme_id": "TN_DISABILITY_PENSION",
+    "scheme_name_ta": "மாற்றுத்திறனாளிகள் பராமரிப்பு உதவித்தொகை திட்டம்",
+    "scheme_name_en": "Differently Abled Maintenance Allowance Scheme",
+    "monthly_stipend": 2000,
+    "eligibility_rules": {
+      "is_differently_abled": true,
+      "min_disability_percentage": 40
+    },
+    "description_ta": "40% மற்றும் அதற்கு மேற்பட்ட மாற்றுத்திறனாளிகளுக்கு மாதம் ₹2,000 பராமரிப்பு உதவித்தொகை.",
+    "required_documents": [
+      "Disability ID Card (UDID)",
+      "Aadhaar Card",
+      "Bank Passbook",
+      "Smart Ration Card"
+    ]
+  }
+]

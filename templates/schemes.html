@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TN அரசு அனைத்து நலத்திட்டங்கள் பட்டியல்</title>
+  
+  <!-- Tailwind CSS & FontAwesome CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-100 min-h-screen text-slate-800">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-blue-800 via-blue-900 to-indigo-950 text-white shadow-lg sticky top-0 z-30">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-3">
+        <a href="/" class="p-2 bg-white/10 hover:bg-white/20 rounded-lg text-white transition text-sm flex items-center">
+          <i class="fa-solid fa-arrow-left mr-2"></i> முகப்பு (Home)
+        </a>
+        <div>
+          <h1 class="text-lg md:text-xl font-bold tracking-tight flex items-center">
+            <i class="fa-solid fa-landmark text-yellow-400 mr-2"></i> TN அரசு நலத்திட்டங்கள் அட்டவணை
+          </h1>
+          <p class="text-xs text-blue-200">Tamil Nadu & Central Welfare Schemes Master Directory</p>
+        </div>
+      </div>
+
+      <!-- Count Badge -->
+      <div id="schemeCountBadge" class="bg-white/10 border border-white/20 px-3 py-1.5 rounded-full text-xs font-semibold text-yellow-300 flex items-center">
+        <i class="fa-solid fa-list-check mr-1.5"></i> ஏற்றிவருகிறது...
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-6xl mx-auto px-4 py-6">
+
+    <!-- Search Box -->
+    <div class="bg-white p-4 rounded-2xl shadow-md border border-slate-200 mb-6">
+      <div class="relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+        <input type="text" id="searchInput" onkeyup="filterSchemes()" placeholder="திட்டத்தின் பெயர், விவரம் அல்லது ஆவணங்கள் மூலம் தேடவும் (எ.கா. மாணவர், மகளிர், உழவர், காப்பீடு)..." class="w-full pl-11 pr-4 py-3 text-sm md:text-base border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600">
+      </div>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="schemesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <!-- Loading Placeholder -->
+      <div class="col-span-full text-center py-16 text-slate-400">
+        <i class="fa-solid fa-spinner fa-spin text-3xl mb-3 text-blue-600"></i>
+        <p class="text-sm">திட்டங்கள் விபரங்கள் பெறப்படுகின்றன...</p>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- JavaScript to Fetch & Render data from schemes.json -->
+  <script>
+    let allSchemesData = [];
+
+    // 1. Fetch data from /api/all-schemes
+    async function loadAllSchemes() {
+      try {
+        const response = await fetch('/api/all-schemes');
+        const result = await response.json();
+
+        if (result.status === 'success' && result.schemes) {
+          allSchemesData = result.schemes;
+          document.getElementById('schemeCountBadge').innerHTML = `<i class="fa-solid fa-list-check mr-1.5"></i> மொத்தம்: ${allSchemesData.length} திட்டங்கள்`;
+          renderCards(allSchemesData);
+        } else {
+          document.getElementById('schemesGrid').innerHTML = "<p class='col-span-full text-center text-red-500 py-10'>திட்டங்களை ஏற்றுவதில் பிழை.</p>";
+        }
+      } catch (err) {
+        console.error("Error loading schemes:", err);
+        document.getElementById('schemesGrid').innerHTML = "<p class='col-span-full text-center text-red-500 py-10'>சேவையகத்தை இணைப்பதில் பிழை.</p>";
+      }
+    }
+
+    // 2. Render Cards into Grid
+    function renderCards(schemesList) {
+      const grid = document.getElementById('schemesGrid');
+      
+      if (!schemesList || schemesList.length === 0) {
+        grid.innerHTML = "<div class='col-span-full text-center py-16 text-slate-400'><i class='fa-solid fa-box-open text-4xl mb-2 text-slate-300'></i><p class='text-sm'>பொருத்தமான திட்டங்கள் எதுவும் இல்லை.</p></div>";
+        return;
+      }
+
+      let html = "";
+      schemesList.forEach(scheme => {
+        const stipendBadge = scheme.monthly_stipend > 0 
+          ? `<span class="bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-full font-bold border border-emerald-300 shrink-0">மாதம் ₹${scheme.monthly_stipend.toLocaleString()}</span>`
+          : `<span class="bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full font-semibold border border-blue-200 shrink-0">மானியம் / காப்பீடு</span>`;
+
+        const docs = (scheme.required_documents || []).map(d => `<li class="flex items-center text-slate-600"><i class="fa-solid fa-circle-check text-emerald-500 mr-2 text-[10px]"></i>${d}</li>`).join('');
+
+        html += `
+          <div class="bg-white rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow border border-slate-200 flex flex-col justify-between">
+            <div>
+              <div class="flex justify-between items-start gap-2 mb-2">
+                <div>
+                  <h2 class="font-bold text-blue-900 text-base leading-snug">${scheme.scheme_name_ta}</h2>
+                  <span class="text-xs text-slate-400 block mt-0.5">${scheme.scheme_name_en}</span>
+                </div>
+                ${stipendBadge}
+              </div>
+
+              <p class="text-xs md:text-sm text-slate-700 mt-3 mb-4 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-100">
+                ${scheme.description_ta}
+              </p>
+
+              <div class="mt-3">
+                <span class="text-xs font-bold text-slate-700 block mb-1.5">
+                  <i class="fa-solid fa-file-lines text-blue-600 mr-1"></i> தேவையான சான்றிதழ்கள்:
+                </span>
+                <ul class="text-xs space-y-1 bg-amber-50/50 p-2.5 rounded-lg border border-amber-100">
+                  ${docs || '<li class="text-slate-400">நேரடி விண்ணப்பம்</li>'}
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-100 flex justify-between items-center text-xs">
+              <span class="text-slate-400 font-mono">ID: ${scheme.scheme_id}</span>
+              <a href="/" class="text-blue-600 font-semibold hover:underline flex items-center">
+                தகுதி சரிபார்க்க <i class="fa-solid fa-arrow-right ml-1"></i>
+              </a>
+            </div>
+          </div>
+        `;
+      });
+
+      grid.innerHTML = html;
+    }
+
+    // 3. Instant Search Filter
+    function filterSchemes() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = allSchemesData.filter(s => 
+        s.scheme_name_ta.toLowerCase().includes(query) ||
+        s.scheme_name_en.toLowerCase().includes(query) ||
+        s.description_ta.toLowerCase().includes(query) ||
+        (s.required_documents || []).some(doc => doc.toLowerCase().includes(query))
+      );
+      renderCards(filtered);
+    }
+
+    // Run automatically on page load
+    loadAllSchemes();
+  </script>
+</body>
+</html>
