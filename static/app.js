@@ -171,57 +171,72 @@ function startVoiceRecognition() {
   recognition.start();
 }
 
-// Helper: Dynamic Tamil NLP Parser
-function parseTamilVoiceToProfile(text) {
-  const dynamicData = {};
 
-  // 1. Gender Extraction
-  if (/மாணவி|பெண்|தாய்|மகளிர்|அம்மா|மனைவி/i.test(text)) {
+  function parseTamilVoiceToProfile(text) {
+  const dynamicData = {};
+  const lower = text.toLowerCase();
+
+  // 1. Gender Detection (Tamil + Tanglish)
+  if (/மாணவி|பெண்|மகளிர்|தாய்|அம்மா|மனைவி|manavi|pen|female|girl|woman/i.test(lower)) {
     dynamicData.gender = "female";
     dynamicData.is_head_of_family = true;
-  } else if (/மாணவர்|ஆண்|விவசாயி|தந்தை|அப்பா|கணவர்/i.test(text)) {
+  } else if (/மாணவர்|ஆண்|விவசாயி|தந்தை|அப்பா|கணவர்|manavan|aan|male|boy|man/i.test(lower)) {
     dynamicData.gender = "male";
   }
 
-  // 2. Occupation & Farming Status
-  if (/விவசாயி|விவசாயம்|உழவர்|நிலம்/i.test(text)) {
+  // 2. Farmer / Agriculture Detection
+  if (/விவசாயி|விவசாயம்|உழவர்|நிலம்|பயிர்|farmer|agriculture|vivasayi|uzhavar/i.test(lower)) {
     dynamicData.is_agricultural_laborer = true;
     dynamicData.is_landholding_farmer = true;
   }
 
-  // 3. School & College Education Status
-  if (/அரசுப் பள்ளி|அரசு பள்ளி|கவர்மெண்ட் பள்ளி/i.test(text)) {
+  // 3. School Education (Govt School)
+  if (/அரசுப் பள்ளி|அரசு பள்ளி|கவர்மெண்ட் பள்ளி|govt school|government school/i.test(lower)) {
     dynamicData.is_govt_school_studied = true;
   }
-  if (/கல்லூரி|படிக்கிறேன்|உயர்கல்வி|காலேஜ்|படிக்கும்/i.test(text)) {
+
+  // 4. College / Higher Education
+  if (/கல்லூரி|படிக்கிறேன்|உயர்கல்வி|காலேஜ்|படிக்கும்|பொறியியல்|college|student|degree|diploma/i.test(lower)) {
     dynamicData.pursuing_higher_education = true;
   }
 
-  // 4. Special Categories
-  if (/விதவை/i.test(text)) {
+  // 5. Special Welfare Categories
+  if (/விதவை|widow/i.test(lower)) {
     dynamicData.is_widow = true;
     dynamicData.gender = "female";
   }
-  if (/மாற்றுத்திறனாளி|ஊனம்/i.test(text)) {
+  if (/மாற்றுத்திறனாளி|ஊனம்|disability|handicapped/i.test(lower)) {
     dynamicData.is_differently_abled = true;
   }
-  if (/கர்ப்பிணி|கர்ப்பம்|தாய்மை/i.test(text)) {
+  if (/கர்ப்பிணி|கர்ப்பம்|pregnant/i.test(lower)) {
     dynamicData.is_pregnant = true;
     dynamicData.gender = "female";
   }
 
-  // 5. Dynamic Age Extraction
+  // 6. Age Extraction (Digits & Spoken words)
   const ageMatch = text.match(/(?:வயது|age)\s*(\d+)|(\d+)\s*(?:வயது|age)/i);
   if (ageMatch) {
-    const val = ageMatch || ageMatch;
-    dynamicData.age = parseInt(val);
+    dynamicData.age = parseInt(ageMatch || ageMatch);
+  } else {
+    // Check direct 2-digit numbers
+    const numMatch = text.match(/\b(1[6-9]|[2-8][0-9])\b/);
+    if (numMatch) dynamicData.age = parseInt(numMatch);
   }
 
-  // 6. Dynamic Income Extraction
-  const incomeMatch = text.match(/(?:வருமானம்|சம்பளம்|income|ரூபாய்)\s*:?\s*(\d+[\d,]*)|(\d+[\d,]*)\s*(?:வருமானம்|ரூபாய்)/i);
-  if (incomeMatch) {
-    const rawVal = (incomeMatch || incomeMatch).replace(/,/g, '');
-    dynamicData.annual_income = parseInt(rawVal);
+  // 7. Income Extraction (Numbers + Tamil Words)
+  if (/ஒரு லட்சம்|1 லட்சம்|1 lakh/i.test(lower)) {
+    dynamicData.annual_income = 100000;
+  } else if (/இரண்டு லட்சம்|2 லட்சம்|2 lakh/i.test(lower)) {
+    dynamicData.annual_income = 200000;
+  } else if (/ஐம்பதாயிரம்|50 ஆயிரம்/i.test(lower)) {
+    dynamicData.annual_income = 50000;
+  } else if (/எண்பதாயிரம்|80 ஆயிரம்/i.test(lower)) {
+    dynamicData.annual_income = 80000;
+  } else {
+    const incomeMatch = text.match(/(?:வருமானம்|சம்பளம்|income|ரூபாய்|rs\.?)\s*:?\s*(\d+[\d,]*)/i);
+    if (incomeMatch) {
+      dynamicData.annual_income = parseInt(incomeMatch.replace(/,/g, ''));
+    }
   }
 
   return dynamicData;
